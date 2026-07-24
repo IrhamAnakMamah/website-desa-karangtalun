@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import Header from '../../components/layout/Header'
@@ -9,6 +9,8 @@ import './Dusun.css'
 export default function Dusun() {
   const { slug } = useParams()
   const dusunData = getDusunBySlug(slug)
+  const [lightboxImg, setLightboxImg] = useState(null)
+  const [isZoomed, setIsZoomed] = useState(false)
 
   // Cari label standar untuk fallback nama jika file .md belum dibuat
   const standardInfo = ALL_DUSUN_SLUGS.find((d) => d.slug === slug)
@@ -385,7 +387,12 @@ export default function Dusun() {
 
               <div className="dusun-galeri-grid">
                 {frontmatter.galeri.map((foto, idx) => (
-                  <div key={idx} className="dusun-galeri-item">
+                  <div
+                    key={idx}
+                    className="dusun-galeri-item"
+                    onClick={() => { setLightboxImg(foto); setIsZoomed(false) }}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <img src={foto} alt={`Dokumentasi ${frontmatter.nama} ${idx + 1}`} loading="lazy" />
                     <div className="dusun-galeri-item__overlay">
                       <span>🔍</span>
@@ -416,6 +423,18 @@ export default function Dusun() {
         </section>
 
       </div>
+
+      {lightboxImg && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImg(null)}>
+          <button className="lightbox-close" onClick={() => setLightboxImg(null)}>✕</button>
+          <img
+            src={lightboxImg}
+            alt="Preview"
+            className={`lightbox-img ${isZoomed ? 'lightbox-img--zoomed' : ''}`}
+            onClick={(e) => { e.stopPropagation(); setIsZoomed(!isZoomed) }}
+          />
+        </div>
+      )}
     </div>
   )
 }

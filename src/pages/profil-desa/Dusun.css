@@ -682,6 +682,40 @@
   box-shadow: var(--shadow-md);
 }
 
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+}
+
+.lightbox-img--zoomed {
+  transform: scale(1.8);
+  cursor: zoom-out;
+}
+
 /* ── NAVIGASI SWITCHER 10 DUSUN ────────────────────────────────────────────── */
 .other-dusun-nav {
   background-color: var(--color-surface);
