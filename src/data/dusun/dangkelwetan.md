@@ -90,13 +90,13 @@ fasilitas_dusun:
     kategori: "UMKM Kuliner"
     foto: "/assets/dangkel_wetan/Warung Mbak Sri.jpg"
     maps_url: "https://maps.app.goo.gl/xf4ACWJsQaK3YY5h9"
-    deskripsi: "Warung kelontong yang menjual kebutuhan pokok sekaligus berbagai sayuran segar dan hasil pertanian lokal untuk memenuhi kebutuhan sehari-hari warga."
+    deskripsi: "Warung kelontong yang menyediakan kebutuhan sehari-hari dan turut menjual bakso untuk masyarakat sekitar."
 
   - nama: "Warung Mbah Mun"
     kategori: "UMKM Kuliner"
     foto: "/assets/dangkel_wetan/Warung Mbah Mun.jpg"
     maps_url: "https://maps.app.goo.gl/Nw3FjNEF46Zx2nKo7"
-    deskripsi: "Warung kelontong yang menyediakan kebutuhan sehari-hari dan turut menjual bakso untuk masyarakat sekitar."
+    deskripsi: "Warung kelontong yang menjual kebutuhan pokok sekaligus berbagai sayuran segar dan hasil pertanian lokal untuk memenuhi kebutuhan sehari-hari warga."
 
   - nama: "Gerdu Meyek (GM)"
     kategori: "Ruang Publik"
